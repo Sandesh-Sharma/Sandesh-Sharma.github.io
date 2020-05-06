@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Sandesh Portfolio</title>
+  </head>
+  <body>
+    <div class="container navbar">
+      <header>
+        <div class="lgo">
+          <h1>sandesh</h1>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#about">about me</a></li>
+            <li><a href="#skills">skills</a></li>
+            <li><a href="#work">my works </a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+    <div id="particles-js"></div>
+
+    <div class="container main-info-section">
+      <div class="text">
+        <h1>
+          <span>H</span>
+          <span class="m-left">i</span>
+          <span class="m-left">,</span>
+          <br />
+          <span>I</span>
+          <span class="m-left">'</span>
+          <span class="m-left">m</span>
+          <span class="name">S</span>
+          <span class="m-left name">a</span>
+          <span class="m-left name">n</span>
+          <span class="m-left name">d</span>
+          <span class="m-left name">e</span>
+          <span class="m-left name">s</span>
+          <span class="m-left name">h</span>
+          <span class="m-left">.</span>
+          <br />
+          <span>D</span>
+          <span class="m-left">e</span>
+          <span class="m-left">v</span>
+          <span class="m-left">e</span>
+          <span class="m-left">l</span>
+          <span class="m-left">o</span>
+          <span class="m-left">p</span>
+          <span class="m-left">e</span>
+          <span class="m-left">r</span>
+          <br />
+          <span>a</span>
+          <span class="m-left">n</span>
+          <span class="m-left">d</span>
+
+          <span>D</span>
+          <span class="m-left">e</span>
+          <span class="m-left">s</span>
+          <span class="m-left">i</span>
+
+          <span class="m-left">g</span>
+          <span class="m-left">n</span>
+          <span class="m-left">e</span>
+          <span class="m-left">r</span>
+          <span class="m-left">.</span>
+        </h1>
+        <p>Flutter/Angular/Node.js</p>
+        <a href="#contact">contact me</a>
+      </div>
+      <div class="profile-image">
+        <img src="img/profile-image.png" alt="" />
+      </div>
+    </div>
+
+    <div class="container about" id="about">
+      <h1>About</h1>
+      <div class="about-me-info">
+        <p>
+          I am a Software Engineering student from Pokhara, Nepal.
+        </p>
+        <p>
+          For the most part, I work with Flutter and Firebase to build natively
+          compiled applications for mobile, web, and desktop. I also love
+          working with JavaScript frameworks like Angular and Nodejs.
+        </p>
+        <p>
+          However, above all, I am a great lover of music and nature.
+        </p>
+      </div>
+
+      <img src="img/dotted-shape.png" alt="" />
+    </div>
+
+    <div class="container skills" id="skills">
+      <h1>Skills</h1>
+      <p class="skills-info">
+        <br />
+        <br />
+        <br />
+        <br />
+      </p>
+      <div class="html">
+        <div class="tag-html">
+          <p>FLUTTER</p>
+        </div>
+        <div class="progressbar">
+          <div class="bar-html"></div>
+        </div>
+      </div>
+      <div class="html">
+        <div class="tag-css">
+          <p>ANGULAR</p>
+        </div>
+        <div class="progressbar">
+          <div class="bar-css"></div>
+        </div>
+      </div>
+      <div class="html">
+        <div class="tag-javascript">
+          <p>NODEJS</p>
+        </div>
+        <div class="progressbar">
+          <div class="bar-javascript"></div>
+        </div>
+      </div>
+      <div class="html">
+        <div class="tag-react">
+          <p>DESIGN</p>
+        </div>
+        <div class="progressbar">
+          <div class="bar-react"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container work" id="work">
+      <h1>Work</h1>
+
+      <div class="work-category">
+        <button
+          id="designing"
+          class="active"
+          onclick="showRequiredCategory(this)"
+        >
+          NativeApp
+        </button>
+        <button id="animation" onclick="showRequiredCategory(this)">
+          Backend
+        </button>
+        <button id="project" onclick="showRequiredCategory(this)">
+          Frontend
+        </button>
+      </div>
+      <div class="category-designing showCategory">
+        <a href=""><img src="img/1.png" /></a>
+        <a href=""><img src="img/2.png" /></a>
+        <a href=""><img src="img/3.png" /></a>
+        <a href=""><img src="img/2.png" /></a>
+        <a href=""><img src="img/3.png" /></a>
+      </div>
+      <div class="category-animation hideCategory">
+        <a href=""><img src="img/1.png" /></a>
+        <a href=""><img src="img/2.png" /></a>
+        <a href=""><img src="img/3.png" /></a>
+      </div>
+      <div class="category-project hideCategory">
+        <a href=""><img src="img/1.png" /></a>
+        <a href=""><img src="img/2.png" /></a>
+        <a href=""><img src="img/3.png" /></a>
+        <a href=""><img src="img/2.png" /></a>
+      </div>
+    </div>
+
+    <div class="container contact" id="contact">
+      <h1>Contact</h1>
+      <form>
+        <input type="text" name="name" placeholder="Full Name" />
+        <input type="email" placeholder="Email" />
+        <input type="email" placeholder="iammandesh@gmail.com" disabled />
+        <textarea
+          name="message"
+          cols="30"
+          rows="10"
+          placeholder="Message"
+        ></textarea>
+        <input type="submit" />
+      </form>
+    </div>
+
+    <footer>
+      <hr />
+      <p>2020 Copyright. All Rights Reserved</p>
+    </footer>
+
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/animation.gsap.min.js"></script>
+    <script src="js/TimelineLite.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/CSSPlugin.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
