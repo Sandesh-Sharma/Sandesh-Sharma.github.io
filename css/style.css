@@ -155,13 +155,14 @@ span.m-left {
 }
 
 .about {
-  height: 100vh;
-  margin-top: 100px;
+  height: 70vh;
+  margin-top: 70px;
 }
 
 .about h1,
+.contact h1,
 .work h1 {
-  font-size: 10rem;
+  font-size: 8rem;
   z-index: 0;
   opacity: 0.1;
 }
@@ -199,14 +200,14 @@ span.m-left {
 }
 
 .skills {
-  height: 100vh;
+  height: 80vh;
 }
 
-.skills h1,
-.contact h1 {
+.skills h1 {
   text-align: right;
-  font-size: 10rem;
+  font-size: 8rem;
   opacity: 0.1;
+  margin-top: 30px;
 }
 
 .skills.info {
@@ -353,4 +354,69 @@ footer p {
   color: #707070;
   font-size: 1.2rem;
   padding: 30px 0;
+}
+
+.contact-info {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px;
+}
+
+.card {
+  background: #2f3542;
+  padding: 0 20px;
+  margin: 0 10px;
+  width: 130px;
+  height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: normal;
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+}
+
+.card-icon {
+  font-size: 28px;
+  background: #ed5565;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  line-height: 60px !important;
+  border-radius: 50%;
+  transition: 0.3s linear;
+}
+
+.card:hover .card-icon {
+  background: none;
+  color: #ed5565;
+  transform: scale(1.6);
+}
+
+.card p {
+  margin-top: 50px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  max-height: 0;
+  opacity: 0;
+  transition: 0.3s linear;
+}
+
+.card:hover p {
+  max-height: 40px;
+  opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .contact-info {
+    flex-direction: column;
+  }
+  .card {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px 0;
+  }
 }
