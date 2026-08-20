@@ -1,248 +1,476 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-<meta property="og:url"                content="https://sandesh-sharma.github.io/" />
-<meta property="og:type"               content="website" />
-<meta property="og:title"              content="Official Website of Sandesh Sharma" />
-<meta property="og:description"        content="I am a Software Engineering student from Pokhara, Nepal.
+    <title>Sandesh Sharma | Academic Homepage</title>
+    <style>
+      :root {
+        --bg-page: #f8fafc;
+        --bg-surface: #ffffff;
+        --text-main: #0f172a;
+        --text-muted: #475569;
+        --text-subtle: #64748b;
+        --primary: #1d4ed8;
+        --border: #e2e8f0;
+        --border-light: #f1f5f9;
+        --accent-bg: #eff6ff;
+        --radius: 8px;
+      }
 
-For the most part, I work with Flutter and Firebase to build natively compiled applications for mobile, web, and desktop. I also love working with JavaScript frameworks like Angular and Nodejs.
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-However, above all, I am a great lover of music and nature." />
-<meta property="og:image"              content="https://sandesh-sharma.github.io/img/profile-image.png" />
-<meta name="theme-color" content="#00FF00">
-    <link rel="stylesheet" href="css/animate.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css"
-      class="stylesheet"
-    />
-    <title>Sandesh Portfolio</title>
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        line-height: 1.6;
+        font-size: 14.5px;
+        padding: 30px 20px;
+      }
+
+      .container {
+        max-width: 960px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      /* Top Banner Hero */
+      .hero-card {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .hero-left {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hero-name {
+        font-size: 1.65rem;
+        font-weight: 700;
+        color: var(--text-main);
+        letter-spacing: -0.02em;
+      }
+
+      .hero-title {
+        font-size: 0.95rem;
+        color: var(--text-muted);
+        font-weight: 500;
+      }
+
+      .nav-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        margin-top: 6px;
+        font-size: 0.9rem;
+      }
+
+      .nav-links a {
+        color: var(--primary);
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+
+      .profile-img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid var(--border);
+        flex-shrink: 0;
+      }
+
+      /* Main Grid (2 Column Split) */
+      .content-grid {
+        display: grid;
+        grid-template-columns: 1fr 310px;
+        gap: 24px;
+      }
+
+      .card {
+        background-color: var(--bg-surface);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 24px;
+        margin-bottom: 24px;
+      }
+
+      .card:last-child {
+        margin-bottom: 0;
+      }
+
+      .section-heading {
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-main);
+        border-bottom: 2px solid var(--border-light);
+        padding-bottom: 8px;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+      }
+
+      .bio-text p {
+        color: var(--text-muted);
+        margin-bottom: 12px;
+        font-size: 0.94rem;
+      }
+
+      .bio-text p:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Timeline & Entry Lists */
+      .entry {
+        margin-bottom: 20px;
+      }
+
+      .entry:last-child {
+        margin-bottom: 0;
+      }
+
+      .entry-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        flex-wrap: wrap;
+      }
+
+      .entry-title {
+        font-weight: 700;
+        color: var(--text-main);
+        font-size: 0.96rem;
+      }
+
+      .entry-date {
+        font-size: 0.83rem;
+        color: var(--text-subtle);
+        font-style: italic;
+      }
+
+      .entry-sub {
+        font-size: 0.88rem;
+        color: var(--primary);
+        font-weight: 500;
+        margin-bottom: 6px;
+      }
+
+      ul.entry-bullets {
+        padding-left: 18px;
+        color: var(--text-muted);
+        font-size: 0.89rem;
+      }
+
+      ul.entry-bullets li {
+        margin-bottom: 5px;
+      }
+
+      /* Sidebar Specific Blocks */
+      .stat-badge {
+        background-color: var(--accent-bg);
+        border: 1px solid rgba(29, 78, 216, 0.15);
+        border-radius: 6px;
+        padding: 12px;
+        margin-bottom: 16px;
+        text-align: center;
+      }
+
+      .stat-value {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .stat-label {
+        font-size: 0.78rem;
+        color: var(--text-subtle);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .tag-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+
+      .tag {
+        background-color: var(--bg-page);
+        border: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.8rem;
+        padding: 3px 8px;
+        border-radius: 4px;
+      }
+
+      .btn-download {
+        display: block;
+        text-align: center;
+        background-color: var(--text-main);
+        color: #ffffff;
+        padding: 10px;
+        border-radius: 6px;
+        font-size: 0.88rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.15s ease;
+      }
+
+      .btn-download:hover {
+        background-color: var(--text-muted);
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+        .hero-card {
+          flex-direction: column-reverse;
+          text-align: center;
+        }
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+        .nav-links {
+          justify-content: center;
+        }
+      }
+    </style>
   </head>
   <body>
-    <div class="container navbar">
-      <header>
-        <div class="lgo">
-          <h1>sandesh</h1>
+    <div class="container">
+      <!-- Header Hero Section -->
+      <header class="hero-card">
+        <div class="hero-left">
+          <h1 class="hero-name">Sandesh Sharma</h1>
+          <div class="hero-title">
+            Mobile Applications Engineer & Edge AI Specialist
+          </div>
+          <div class="nav-links">
+            <a href="mailto:your.email@example.com">Email</a>
+            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
+            <a href="https://github.com" target="_blank">GitHub</a>
+            <a href="CV.pdf" target="_blank">Download CV (PDF)</a>
+          </div>
         </div>
-
-        <nav>
-          <ul>
-            <li><a href="#about">about me</a></li>
-            <li><a href="#skills">skills</a></li>
-            <!-- work section in progress
-            <li><a href="#work">my works </a></li>
-            -->
-          </ul>
-        </nav>
+        <img src="profile.jpg" alt="Sandesh Sharma" class="profile-img" />
       </header>
-    </div>
-    <div id="particles-js"></div>
 
-    <div class="container main-info-section">
-      <div class="text">
-        <h1>
-          <span>H</span>
-          <span class="m-left">i</span>
-          <span class="m-left">,</span>
-          <br />
-          <span>I</span>
-          <span class="m-left">'</span>
-          <span class="m-left">m</span>
-          <span class="name">S</span>
-          <span class="m-left name">a</span>
-          <span class="m-left name">n</span>
-          <span class="m-left name">d</span>
-          <span class="m-left name">e</span>
-          <span class="m-left name">s</span>
-          <span class="m-left name">h</span>
-          <span class="m-left">.</span>
-          <br />
-          <span>D</span>
-          <span class="m-left">e</span>
-          <span class="m-left">v</span>
-          <span class="m-left">e</span>
-          <span class="m-left">l</span>
-          <span class="m-left">o</span>
-          <span class="m-left">p</span>
-          <span class="m-left">e</span>
-          <span class="m-left">r</span>
-          <br />
-          <span>a</span>
-          <span class="m-left">n</span>
-          <span class="m-left">d</span>
+      <!-- Two Column Main Layout -->
+      <div class="content-grid">
+        <!-- Left Main Stream -->
+        <main class="main-stream">
+          <!-- About Card -->
+          <section class="card">
+            <h2 class="section-heading">About Me</h2>
+            <div class="bio-text">
+              <p>
+                I am a Software Engineer specializing in mobile software
+                architecture and on-device machine learning deployment. I hold a
+                B.Sc. in Software Engineering from Pokhara University,
+                graduating <strong>1st in my class (CGPA 3.84 / 4.00)</strong>.
+              </p>
+              <p>
+                Currently, as a Remote Mobile Applications Engineer at
+                <strong>Exotrac LLC</strong>, I focus on deploying TensorFlow
+                Lite and ONNX computer vision models directly onto iOS and
+                Android devices, managing runtime pipelines under strict device
+                memory, battery, and thermal limits.
+              </p>
+              <p>
+                I am preparing for CS Ph.D. applications centered on
+                <strong
+                  >Edge AI, Mobile Computing, TinyML, and On-Device Computer
+                  Vision</strong
+                >.
+              </p>
+            </div>
+          </section>
 
-          <span>D</span>
-          <span class="m-left">e</span>
-          <span class="m-left">s</span>
-          <span class="m-left">i</span>
+          <!-- Experience Card -->
+          <section class="card">
+            <h2 class="section-heading">Industry Experience</h2>
 
-          <span class="m-left">g</span>
-          <span class="m-left">n</span>
-          <span class="m-left">e</span>
-          <span class="m-left">r</span>
-          <span class="m-left">.</span>
-        </h1>
-        <p>Flutter/Angular/Node.js</p>
-        <a href="#contact">let's connect</a>
-      </div>
-      <div class="profile-image">
-        <img src="img/profile-image.png" alt="" />
-      </div>
-    </div>
+            <div class="entry">
+              <div class="entry-header">
+                <span class="entry-title"
+                  >Remote Mobile Applications Engineer</span
+                >
+                <span class="entry-date">Oct 2022 – Present</span>
+              </div>
+              <div class="entry-sub">Exotrac LLC — USA (Remote)</div>
+              <ul class="entry-bullets">
+                <li>
+                  Integrated team-developed ONNX and TensorFlow Lite models into
+                  mobile platforms for container detection, trailer tracking,
+                  OCR, and driver assistance.
+                </li>
+                <li>
+                  Engineered mobile runtime workflows to execute multiple vision
+                  models in parallel within strict device RAM, battery, and
+                  thermal limits.
+                </li>
+                <li>
+                  Collaborated with machine learning developers to benchmark,
+                  test, and deploy optimized edge models.
+                </li>
+              </ul>
+            </div>
 
-    <div class="container about" id="about">
-      <h1>About</h1>
-      <div class="about-me-info">
-        <p>
-          I am a Software Engineering student from Pokhara, Nepal.
-        </p>
-        <p>
-          For the most part, I work with Flutter and Firebase to build natively
-          compiled applications for mobile, web, and desktop. I also love
-          working with JavaScript frameworks like Angular and Nodejs.
-        </p>
-        <p>
-          However, above all, I am a great lover of music and nature.
-        </p>
-      </div>
+            <div class="entry">
+              <div class="entry-header">
+                <span class="entry-title"
+                  >Co-Founder & Mobile Application Developer</span
+                >
+                <span class="entry-date">Sep 2020 – Oct 2022</span>
+              </div>
+              <div class="entry-sub">Codekavya Technologies — Nepal</div>
+              <ul class="entry-bullets">
+                <li>
+                  Architected and delivered cross-platform mobile software
+                  solutions using Flutter, Swift, and Kotlin across several
+                  commercial domains.
+                </li>
+              </ul>
+            </div>
+          </section>
 
-      <img src="img/dotted-shape.png" alt="" />
-    </div>
+          <!-- Academic Projects Card -->
+          <section class="card">
+            <h2 class="section-heading">Academic Projects</h2>
 
-    <div class="container skills" id="skills">
-      <h1>Skills</h1>
-      <p class="skills-info">
-        <br />
-        <br />
-        <br />
-        <br />
-      </p>
-      <div class="html">
-        <div class="tag-html">
-          <p>FLUTTER</p>
-        </div>
-        <div class="progressbar">
-          <div class="bar-html"></div>
-        </div>
-      </div>
-      <div class="html">
-        <div class="tag-css">
-          <p>ANGULAR</p>
-        </div>
-        <div class="progressbar">
-          <div class="bar-css"></div>
-        </div>
-      </div>
-      <div class="html">
-        <div class="tag-javascript">
-          <p>NODEJS</p>
-        </div>
-        <div class="progressbar">
-          <div class="bar-javascript"></div>
-        </div>
-      </div>
-      <div class="html">
-        <div class="tag-react">
-          <p>DESIGN</p>
-        </div>
-        <div class="progressbar">
-          <div class="bar-react"></div>
-        </div>
-      </div>
-    </div>
-    <!--  work section in progress
-     <div class="container work" id="work">
-      <h1>Work</h1>
+            <div class="entry">
+              <div class="entry-header">
+                <span class="entry-title"
+                  >CricPulse — Real-Time Scoring Platform[cite: 2]</span
+                >
+                <span class="entry-date">2023 – 2024</span>
+              </div>
+              <div class="entry-sub">
+                B.Sc. Capstone Thesis Project (Supervisor: Dr. Udaya Raj
+                Dhungana)[cite: 2]
+              </div>
+              <ul class="entry-bullets">
+                <li>
+                  Architected an event-driven real-time scoring system using
+                  Flutter, Node.js, PostgreSQL, and Supabase[cite: 2].
+                </li>
+                <li>
+                  Implemented WebSockets and Edge Runtime (Deno) functions for
+                  low-latency live score updates and commentary streaming[cite:
+                  2].
+                </li>
+              </ul>
+            </div>
 
-      <div class="work-category">
-        <button
-          id="designing"
-          class="active"
-          onclick="showRequiredCategory(this)"
-        >
-          NativeApp
-        </button>
-        <button id="animation" onclick="showRequiredCategory(this)">
-          Backend
-        </button>
-        <button id="project" onclick="showRequiredCategory(this)">
-          Frontend
-        </button>
-      </div>
-      <div class="category-designing showCategory">
-        <a href=""><img src="img/1.png" /></a>
-        <a href=""><img src="img/2.png" /></a>
-        <a href=""><img src="img/3.png" /></a>
-        <a href=""><img src="img/2.png" /></a>
-        <a href=""><img src="img/3.png" /></a>
-      </div>
-      <div class="category-animation hideCategory">
-        <a href=""><img src="img/1.png" /></a>
-        <a href=""><img src="img/2.png" /></a>
-        <a href=""><img src="img/3.png" /></a>
-      </div>
-      <div class="category-project hideCategory">
-        <a href=""><img src="img/1.png" /></a>
-        <a href=""><img src="img/2.png" /></a>
-        <a href=""><img src="img/3.png" /></a>
-        <a href=""><img src="img/2.png" /></a>
-      </div>
-    </div>
-    
-  -->
-    <div class="container contact" id="contact">
-      <h1>Contact me</h1>
-      <div class="contact-info">
-        <div class="card">
-          <a href="http://iammadesh@gmail.com">
-            <i class="card-icon far fa-envelope"></i>
-          </a>
-          <p>gmail</p>
-        </div>
+            <div class="entry">
+              <div class="entry-header">
+                <span class="entry-title"
+                  >Herchaha — Interactive AI Healthcare System[cite: 1]</span
+                >
+                <span class="entry-date">2022 – 2023</span>
+              </div>
+              <div class="entry-sub">B.Sc. Minor Project[cite: 1]</div>
+              <ul class="entry-bullets">
+                <li>
+                  Built an AI healthcare chatbot utilizing the RASA NLU
+                  framework for natural language symptom evaluation and patient
+                  triage[cite: 1].
+                </li>
+                <li>
+                  Integrated Django REST APIs with ReactJS and interactive D3.js
+                  visualization modules connected to live health data
+                  feeds[cite: 1].
+                </li>
+              </ul>
+            </div>
+          </section>
+        </main>
 
-        <div class="card">
-          <a href="https://www.facebook.com/thesandeshsharma">
-            <i class="card-icon fab fa-facebook"></i>
-          </a>
-          <p>facebook</p>
-        </div>
+        <!-- Right Sidebar / Quick Facts -->
+        <aside class="right-stream">
+          <!-- Academic Distinction -->
+          <div class="card">
+            <h2 class="section-heading">Academic Distinction</h2>
+            <div class="stat-badge">
+              <div class="stat-value">Rank 1 / 55</div>
+              <div class="stat-label">B.Sc. Software Engineering</div>
+            </div>
+            <div class="entry" style="margin-bottom: 0">
+              <div class="entry-title">Pokhara University</div>
+              <div class="entry-date">2019 – 2025</div>
+              <div
+                style="
+                  font-size: 0.86rem;
+                  color: var(--text-muted);
+                  margin-top: 4px;
+                "
+              >
+                CGPA: 3.84 / 4.00<br />
+                Honors: Dean's Honor List
+              </div>
+            </div>
+          </div>
 
-        <div class="card">
-          <a href="https://twitter.com/thesanshar">
-            <i class="card-icon fab fa-twitter"></i>
-          </a>
-          <p>twitter</p>
-        </div>
-        <div class="card">
-          <a
-            href="https://www.google.com/maps/place/Pokhara/@28.2299535,83.8165301,11z/data=!3m1!4b1!4m5!3m4!1s0x3995937bbf0376ff:0xf6cf823b25802164!8m2!3d28.2095831!4d83.9855674"
+          <!-- Core Stack Card -->
+          <div class="card">
+            <h2 class="section-heading">Core Competencies</h2>
+            <div class="tag-cloud">
+              <span class="tag">Edge AI</span>
+              <span class="tag">On-Device ML</span>
+              <span class="tag">TensorFlow Lite</span>
+              <span class="tag">ONNX Runtime</span>
+              <span class="tag">Kotlin</span>
+              <span class="tag">Swift</span>
+              <span class="tag">Flutter</span>
+              <span class="tag">Python</span>
+              <span class="tag">OpenCV</span>
+              <span class="tag">C / C++</span>
+            </div>
+          </div>
+
+          <!-- Leadership Card -->
+          <div class="card">
+            <h2 class="section-heading">Leadership</h2>
+            <div class="entry" style="margin-bottom: 0">
+              <div class="entry-title">Pokhara Toastmasters Club</div>
+              <div class="entry-sub" style="font-size: 0.82rem">
+                President (2025–2026)
+              </div>
+              <p
+                style="font-size: 0.85rem; color: var(--text-muted); margin: 0"
+              >
+                Led executive operations, doubled active club membership, and
+                achieved Select Distinguished status.
+              </p>
+            </div>
+          </div>
+
+          <!-- CV Action -->
+          <a href="CV.pdf" target="_blank" class="btn-download"
+            >View Full Resume (PDF)</a
           >
-            <i class="card-icon fas fa-map-marker-alt"></i>
-          </a>
-          <p>address</p>
-        </div>
+        </aside>
       </div>
     </div>
-
-    <footer>
-      <hr />
-      <p>2020 Copyright. All Rights Reserved</p>
-    </footer>
-
-    <script type="text/javascript" src="particles.js"></script>
-    <script type="text/javascript" src="app.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="js/ScrollMagic.min.js"></script>
-    <script src="js/animation.gsap.min.js"></script>
-    <script src="js/TimelineLite.min.js"></script>
-    <script src="js/TweenMax.min.js"></script>
-    <script src="js/CSSPlugin.min.js"></script>
-    <script src="js/script.js"></script>
   </body>
 </html>
