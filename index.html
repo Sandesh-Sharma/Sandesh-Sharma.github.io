@@ -3,421 +3,257 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sandesh Sharma | Academic Homepage</title>
-    <style>
-      :root {
-        --bg-page: #f8fafc;
-        --bg-surface: #ffffff;
-        --text-main: #0f172a;
-        --text-muted: #475569;
-        --text-subtle: #64748b;
-        --primary: #1d4ed8;
-        --border: #e2e8f0;
-        --border-light: #f1f5f9;
-        --accent-bg: #eff6ff;
-        --radius: 8px;
-      }
-
-      * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-      }
-
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-          Arial, sans-serif;
-        background-color: var(--bg-page);
-        color: var(--text-main);
-        line-height: 1.6;
-        font-size: 14.5px;
-        padding: 30px 20px;
-      }
-
-      .container {
-        max-width: 960px;
-        margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        gap: 24px;
-      }
-
-      /* Top Banner Hero */
-      .hero-card {
-        background-color: var(--bg-surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 30px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
-      }
-
-      .hero-left {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .hero-name {
-        font-size: 1.65rem;
-        font-weight: 700;
-        color: var(--text-main);
-        letter-spacing: -0.02em;
-      }
-
-      .hero-title {
-        font-size: 0.95rem;
-        color: var(--text-muted);
-        font-weight: 500;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        margin-top: 6px;
-        font-size: 0.9rem;
-      }
-
-      .nav-links a {
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 500;
-      }
-
-      .nav-links a:hover {
-        text-decoration: underline;
-      }
-
-      .profile-img {
-        width: 130px;
-        height: 130px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 2px solid var(--border);
-        flex-shrink: 0;
-      }
-
-      /* Main Grid (2 Column Split) */
-      .content-grid {
-        display: grid;
-        grid-template-columns: 1fr 310px;
-        gap: 24px;
-      }
-
-      .card {
-        background-color: var(--bg-surface);
-        border: 1px solid var(--border);
-        border-radius: var(--radius);
-        padding: 24px;
-        margin-bottom: 24px;
-      }
-
-      .card:last-child {
-        margin-bottom: 0;
-      }
-
-      .section-heading {
-        font-size: 1rem;
-        font-weight: 700;
-        color: var(--text-main);
-        border-bottom: 2px solid var(--border-light);
-        padding-bottom: 8px;
-        margin-bottom: 16px;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-      }
-
-      .bio-text p {
-        color: var(--text-muted);
-        margin-bottom: 12px;
-        font-size: 0.94rem;
-      }
-
-      .bio-text p:last-child {
-        margin-bottom: 0;
-      }
-
-      /* Timeline & Entry Lists */
-      .entry {
-        margin-bottom: 20px;
-      }
-
-      .entry:last-child {
-        margin-bottom: 0;
-      }
-
-      .entry-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        flex-wrap: wrap;
-      }
-
-      .entry-title {
-        font-weight: 700;
-        color: var(--text-main);
-        font-size: 0.96rem;
-      }
-
-      .entry-date {
-        font-size: 0.83rem;
-        color: var(--text-subtle);
-        font-style: italic;
-      }
-
-      .entry-sub {
-        font-size: 0.88rem;
-        color: var(--primary);
-        font-weight: 500;
-        margin-bottom: 6px;
-      }
-
-      ul.entry-bullets {
-        padding-left: 18px;
-        color: var(--text-muted);
-        font-size: 0.89rem;
-      }
-
-      ul.entry-bullets li {
-        margin-bottom: 5px;
-      }
-
-      /* Sidebar Specific Blocks */
-      .stat-badge {
-        background-color: var(--accent-bg);
-        border: 1px solid rgba(29, 78, 216, 0.15);
-        border-radius: 6px;
-        padding: 12px;
-        margin-bottom: 16px;
-        text-align: center;
-      }
-
-      .stat-value {
-        font-size: 1.1rem;
-        font-weight: 700;
-        color: var(--primary);
-      }
-
-      .stat-label {
-        font-size: 0.78rem;
-        color: var(--text-subtle);
-        text-transform: uppercase;
-        letter-spacing: 0.04em;
-      }
-
-      .tag-cloud {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-      }
-
-      .tag {
-        background-color: var(--bg-page);
-        border: 1px solid var(--border);
-        color: var(--text-muted);
-        font-size: 0.8rem;
-        padding: 3px 8px;
-        border-radius: 4px;
-      }
-
-      .btn-download {
-        display: block;
-        text-align: center;
-        background-color: var(--text-main);
-        color: #ffffff;
-        padding: 10px;
-        border-radius: 6px;
-        font-size: 0.88rem;
-        font-weight: 600;
-        text-decoration: none;
-        transition: background-color 0.15s ease;
-      }
-
-      .btn-download:hover {
-        background-color: var(--text-muted);
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .hero-card {
-          flex-direction: column-reverse;
-          text-align: center;
-        }
-        .content-grid {
-          grid-template-columns: 1fr;
-        }
-        .nav-links {
-          justify-content: center;
-        }
-      }
-    </style>
+    <title>Portfolio - Sandesh Sharma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
   </head>
-  <body>
-    <div class="container">
-      <!-- Header Hero Section -->
-      <header class="hero-card">
-        <div class="hero-left">
-          <h1 class="hero-name">Sandesh Sharma</h1>
-          <div class="hero-title">
-            Mobile Applications Engineer & Edge AI Specialist
-          </div>
-          <div class="nav-links">
-            <a href="mailto:your.email@example.com">Email</a>
-            <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-            <a href="https://github.com" target="_blank">GitHub</a>
-            <a href="CV.pdf" target="_blank">Download CV (PDF)</a>
-          </div>
-        </div>
-        <img src="profile.jpg" alt="Sandesh Sharma" class="profile-img" />
-      </header>
-
-      <!-- Two Column Main Layout -->
-      <div class="content-grid">
-        <!-- Left Main Stream -->
-        <main class="main-stream">
-          <!-- About Card -->
-          <section class="card">
-            <h2 class="section-heading">About Me</h2>
-            <div class="bio-text">
-              <p>
-                I am a Software Engineer specializing in mobile software
-                architecture and on-device machine learning deployment. I hold a
-                B.Sc. in Software Engineering from Pokhara University.
-              </p>
-              <p>
-                Currently, as a Remote Mobile Applications Engineer at
-                <strong>Exotrac LLC</strong>, I focus on deploying TensorFlow
-                Lite and ONNX computer vision models directly onto iOS and
-                Android devices, managing runtime pipelines under strict device
-                memory, battery, and thermal limits.
-              </p>
-              <p>
-               My primary research interests lie in
-                <strong
-                  >Edge AI, Mobile Computing, TinyML, and On-Device Computer
-                  Vision</strong
-                >.
-              </p>
-            </div>
-          </section>
-
-          <!-- Experience Card -->
-          <section class="card">
-            <h2 class="section-heading">Industry Experience</h2>
-
-            <div class="entry">
-              <div class="entry-header">
-                <span class="entry-title"
-                  >Remote Mobile Applications Engineer</span
-                >
-                <span class="entry-date">Oct 2022 – Present</span>
-              </div>
-              <div class="entry-sub">Exotrac LLC — USA (Remote)</div>
-              <ul class="entry-bullets">
-                <li>
-                  Integrated team-developed ONNX and TensorFlow Lite models into
-                  mobile platforms for container detection, trailer tracking,
-                  OCR, and driver assistance.
-                </li>
-                <li>
-                  Engineered mobile runtime workflows to execute multiple vision
-                  models in parallel within strict device RAM, battery, and
-                  thermal limits.
-                </li>
-                <li>
-                  Collaborated with machine learning developers to benchmark,
-                  test, and deploy optimized edge models.
-                </li>
-              </ul>
-            </div>
-
-            <div class="entry">
-              <div class="entry-header">
-                <span class="entry-title"
-                  >Co-Founder & Mobile Application Developer</span
-                >
-                <span class="entry-date">Sep 2020 – Oct 2022</span>
-              </div>
-              <div class="entry-sub">Codekavya Technologies — Nepal</div>
-              <ul class="entry-bullets">
-                <li>
-                  Architected and delivered cross-platform mobile software
-                  solutions using Flutter, Swift, and Kotlin across several
-                  commercial domains.
-                </li>
-              </ul>
-            </div>
-          </section>
-     
-        </main>
-
-        <!-- Right Sidebar / Quick Facts -->
-        <aside class="right-stream">
-          <!-- Academic Distinction -->
-          <div class="card">
-            <h2 class="section-heading">Academic Distinction</h2>
-           
-            </div>
-            <div class="entry" style="margin-bottom: 0">
-              <div class="entry-title">Pokhara University | B.Sc. Software Engineering</div>
-              <div class="entry-date">2019 – 2025</div>
-              <div
-                style="
-                  font-size: 0.86rem;
-                  color: var(--text-muted);
-                  margin-top: 4px;
-                "
-              >
-                CGPA: 3.84 / 4.00<br />
-                Honors: Dean's Honor List
-              </div>
-            </div>
-
-
-          <!-- Core Stack Card -->
-          <div class="card">
-            <h2 class="section-heading">Core Competencies</h2>
-            <div class="tag-cloud">
-              <span class="tag">Edge AI</span>
-              <span class="tag">On-Device ML</span>
-              <span class="tag">TensorFlow Lite</span>
-              <span class="tag">ONNX Runtime</span>
-              <span class="tag">Kotlin</span>
-              <span class="tag">Swift</span>
-              <span class="tag">Flutter</span>
-              <span class="tag">Python</span>
-              <span class="tag">OpenCV</span>
-              <span class="tag">C / C++</span>
-            </div>
-          </div>
-
-          <!-- Leadership Card -->
-          <div class="card">
-            <h2 class="section-heading">Leadership</h2>
-            <div class="entry" style="margin-bottom: 0">
-              <div class="entry-title">Pokhara Toastmasters Club</div>
-              <div class="entry-sub" style="font-size: 0.82rem">
-                President (2025–2026)
-              </div>
-              <p
-                style="font-size: 0.85rem; color: var(--text-muted); margin: 0"
-              >
-                Led executive operations, doubled active club membership, and
-                achieved Select Distinguished status.
-              </p>
-            </div>
-          </div>
-
-          <!-- CV Action -->
-          <a href="CV.pdf" target="_blank" class="btn-download"
-            >View Full Resume (PDF)</a
+  <body
+    class="bg-[#f7f6f2] text-[#2c2a29] font-sans antialiased min-h-screen py-12 px-6 md:px-16 flex justify-center"
+  >
+    <div
+      class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-start"
+    >
+      <!-- Profile Sidebar (Left) -->
+      <aside
+        class="md:col-span-4 sticky top-0 md:top-12 z-20 bg-[#f7f6f2] py-4 md:py-0 space-y-6"
+      >
+        <div>
+          <div
+            class="w-20 h-20 mb-4 rounded-full p-0.5 border border-[#dedad0] ring-2 ring-[#e6e2d6]/50 overflow-hidden"
           >
-        </aside>
-      </div>
+            <img
+              src="profile.jpg"
+              alt="Sandesh Sharma"
+              class="w-full h-full object-cover rounded-full"
+            />
+          </div>
+          <h1 class="text-2xl font-semibold text-[#1a1918]">Sandesh Sharma</h1>
+          <p class="text-sm text-[#6e6a5f] mt-1 leading-snug">
+            Mobile Applications Engineer
+          </p>
+        </div>
+
+        <div
+          class="border-t border-[#e2dfd5] pt-6 space-y-3 text-sm text-[#524e45]"
+        >
+          <p class="flex items-center gap-2">📍 Pokhara, Nepal</p>
+          <p class="flex items-center gap-2">
+            ✉️
+            <a href="mailto:thesandeshsharma@email.com" class="hover:underline"
+              >thesandeshsharma@email.com</a
+            >
+          </p>
+          <p class="flex items-center gap-2">📞 +977-9863500221</p>
+          <p class="flex items-center gap-2">
+            🔗
+            <a
+              href="https://www.linkedin.com/in/sandesh-sharma-74b650255/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:underline"
+              >LinkedIn</a
+            >
+          </p>
+          <p class="flex items-center gap-2">
+            💻
+            <a
+              href="https://github.com/sandesh-sharma"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:underline"
+              >GitHub</a
+            >
+          </p>
+        </div>
+      </aside>
+
+      <!-- Main Content (Right) -->
+      <main class="md:col-span-8 space-y-10">
+        <!-- About Me -->
+        <section>
+          <h2
+            class="text-xs uppercase tracking-widest font-bold text-[#8a8579] mb-3"
+          >
+            About Me
+          </h2>
+          <div class="text-base leading-relaxed text-[#3d3a35] space-y-3">
+            <p>
+              I am a licensed Software Engineering graduate from Pokhara
+              University, Nepal. Currently, I am working as a Mobile
+              Applications Engineer at Exotrac LLC, focusing on on-device AI,
+              computer vision, and low-latency edge model deployment.
+            </p>
+            <p>
+              My research interests lie in Edge AI, Mobile Computing, Computer
+              Vision, and Efficient Deep Learning Systems, focusing on bridging
+              the gap between resource-constrained mobile hardware and complex
+              neural network execution.
+            </p>
+            <p>
+              I completed my Bachelor's degree in Software Engineering with top
+              honors (Dean's Honor List). During my undergraduate studies, I
+              co-founded Codekavya Technologies and built cross-platform
+              applications across various domains before expanding into computer
+              vision and edge inference systems.
+            </p>
+            <p class="pt-2">
+              If you have some ideas and would like to collaborate, I would love
+              to get in touch. <br />
+              ✉️ Email:
+              <a
+                href="mailto:thesandeshsharma@email.com"
+                class="underline hover:text-[#1a1918]"
+                >thesandeshsharma@email.com</a
+              >
+            </p>
+          </div>
+        </section>
+
+        <div class="border-t border-[#e2dfd5]"></div>
+
+        <!-- Research Interests -->
+        <section>
+          <h2
+            class="text-xs uppercase tracking-widest font-bold text-[#8a8579] mb-4"
+          >
+            Research Interests
+          </h2>
+          <div class="space-y-3 text-sm text-[#3d3a35]">
+            <div>
+              <span class="font-semibold text-[#1a1918]"
+                >Edge AI & Mobile Computing:</span
+              >
+              <span class="text-[#524e45]">
+                Efficient Neural Network Execution, On-Device Inference &
+                Fine-Tuning, Resource-Constrained ML (TinyML).</span
+              >
+            </div>
+            <div>
+              <span class="font-semibold text-[#1a1918]">Computer Vision:</span>
+              <span class="text-[#524e45]">
+                Real-Time Object Detection, Lightweight Optical Character
+                Recognition (OCR), Autonomous Perception.</span
+              >
+            </div>
+            <div>
+              <span class="font-semibold text-[#1a1918]"
+                >Efficient Deep Learning Systems:</span
+              >
+              <span class="text-[#524e45]">
+                Model Quantization, Pruning, Parallel Multi-Model Execution on
+                Mobile Hardware (CPU/GPU/NPU).</span
+              >
+            </div>
+          </div>
+        </section>
+
+        <div class="border-t border-[#e2dfd5]"></div>
+
+        <!-- Education -->
+        <section>
+          <h2
+            class="text-xs uppercase tracking-widest font-bold text-[#8a8579] mb-4"
+          >
+            Education
+          </h2>
+          <div class="space-y-5">
+            <div>
+              <div class="flex justify-between items-baseline">
+                <h3 class="font-medium text-[#1a1918]">
+                  Bachelor of Science in Software Engineering
+                </h3>
+                <span class="text-xs text-[#8a8579]">CGPA: 3.84/4.00</span>
+              </div>
+              <p class="text-sm text-[#6e6a5f]">Pokhara University</p>
+              <p class="text-xs text-[#8a8579] mt-0.5">
+                Honors: Dean's Honor List[cite: 1]
+              </p>
+            </div>
+            <div>
+              <h3 class="font-medium text-[#1a1918]">GCE A Levels</h3>
+              <p class="text-sm text-[#6e6a5f]">
+                Budhanilkantha School, Kathmandu
+              </p>
+            </div>
+            <div>
+              <h3 class="font-medium text-[#1a1918]">
+                School Leaving Certificate
+              </h3>
+              <p class="text-sm text-[#6e6a5f]">Pokhara Public School</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="border-t border-[#e2dfd5]"></div>
+
+        <!-- Experience -->
+        <section>
+          <h2
+            class="text-xs uppercase tracking-widest font-bold text-[#8a8579] mb-4"
+          >
+            Experience
+          </h2>
+          <div class="space-y-6">
+            <div>
+              <div class="flex justify-between items-baseline">
+                <h3 class="font-medium text-[#1a1918]">
+                  Mobile Applications Engineer
+                </h3>
+                <span class="text-xs text-[#8a8579]">Oct 2022 – Present</span>
+              </div>
+              <p class="text-sm text-[#6e6a5f]">
+                Exotrac LLC | New York, USA (Remote)
+              </p>
+              <ul
+                class="list-disc list-inside text-sm text-[#3d3a35] mt-2 space-y-1.5 leading-relaxed"
+              >
+                <li>
+                  Deployed and optimized machine learning models on iOS/Android
+                  using TFLite and ONNX Runtime for automated yard management
+                  systems.
+                </li>
+                <li>
+                  Engineered a parallel edge inference engine running multiple
+                  computer vision models concurrently under strict latency,
+                  memory, and battery constraints.
+                </li>
+                <li>
+                  Implemented real-time computer vision algorithms for collision
+                  detection and back-up distance calculations using on-device
+                  camera streams.
+                </li>
+                <li>
+                  Collaborated with ML teams to optimize graph execution and
+                  adapt architectures for low-latency edge deployment.
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="flex justify-between items-baseline">
+                <h3 class="font-medium text-[#1a1918]">
+                  Co-Founder & Mobile Application Developer
+                </h3>
+                <span class="text-xs text-[#8a8579]">Sep 2020 – Oct 2022</span>
+              </div>
+              <p class="text-sm text-[#6e6a5f]">
+                Codekavya Technologies Pvt. Ltd. | Pokhara, Nepal.
+              </p>
+              <ul
+                class="list-disc list-inside text-sm text-[#3d3a35] mt-2 space-y-1.5 leading-relaxed"
+              >
+                <li>
+                  Architected and delivered cross-platform mobile applications
+                  across diverse domains using Flutter, Kotlin, and Swift.
+                </li>
+                <li>
+                  Managed client requirements, technical architecture design,
+                  software execution, and deployment lifecycles.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </main>
     </div>
   </body>
 </html>
