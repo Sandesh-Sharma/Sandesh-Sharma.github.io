@@ -7,16 +7,26 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
   <body
-    class="bg-[#f7f6f2] text-[#2c2a29] font-sans antialiased min-h-screen py-12 px-6 md:px-16 flex justify-center"
+    class="bg-[#f7f6f2] text-[#2c2a29] font-sans antialiased min-h-screen flex flex-col items-center"
   >
+    <!-- Top Navigation Bar -->
+    <header
+      class="w-full border-b border-[#e2dfd5] bg-[#f7f6f2]/80 backdrop-blur-md sticky top-0 z-30 py-3.5 px-6 md:px-16 flex justify-between items-center text-xs tracking-widest uppercase font-semibold text-[#8a8579]"
+    >
+      <span>Academic & Professional Portfolio</span>
+      <span class="hidden sm:inline-block">Sandesh Sharma</span>
+    </header>
+
+    <!-- Container -->
     <div
-      class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-start"
+      class="max-w-5xl w-full grid grid-cols-1 md:grid-cols-12 gap-12 items-start py-10 px-6 md:px-16"
     >
       <!-- Profile Sidebar (Left) -->
       <aside
-        class="md:col-span-4 sticky top-0 md:top-12 z-20 bg-[#f7f6f2] py-4 md:py-0 space-y-6"
+        class="md:col-span-4 sticky top-16 md:top-20 z-20 bg-[#f7f6f2] py-4 md:py-0 space-y-6"
       >
         <div>
+          <!-- Profile Image with Ring & Black & White Filter -->
           <div
             class="w-20 h-20 mb-4 rounded-full p-0.5 border border-[#dedad0] ring-2 ring-[#e6e2d6]/50 overflow-hidden"
           >
